@@ -27,6 +27,8 @@ body {
   align-items: center;
 }
 
+/* -------------------------------------------- */
+
 .slider {
   overflow: hidden;
   flex: 1 1 auto;
@@ -38,7 +40,7 @@ body {
   flex-shrink: 0;
 }
 .slide__body {
-  width: 30vh;
+  width: 60vh;
   margin: 0 auto;
   min-width: 90vw;
   box-shadow: 0 0 1.875rem rgba(0, 0, 0, 0.5);
@@ -48,7 +50,7 @@ body {
   position: relative;
   cursor: pointer;
 }
-.slide__photo {
+.slide__picture {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -77,4 +79,84 @@ body {
   top: 0;
   left: 0;
   background-color: #fff;
+}
+/* ---------------------------------------------- */
+.background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.background__wrapper {
+  min-height: 100%;
+  display: flex;
+}
+.background__slide {
+  flex-shrink: 0;
+  position: relative;
+  min-height: 100%;
+}
+.background__image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.background__image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1);
+}
+/* --------------------------------------- */
+.text {
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: 12.5vh;
+  left: 50%;
+  transform: translate(-50%, 0px);
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+  z-index: 5;
+  pointer-events: none;
+}
+.text__wrapper {
+  display: flex;
+  position: relative;
+  align-items: flex-end;
+}
+.text__slide span {
+  display: inline-block;
+  min-width: 90vw;
+  padding: 0.3125rem 0.625rem;
+  background-color: #000;
+  text-transform: uppercase;
+  font-size: 4vh;
+}
+@media (max-aspect-ratio: 3/2) {
+  .text__slide span {
+    font-style: 3.5vw;
+  }
+}
+@media (min-width: 991px) {
+  .text__slide span {
+    max-width: 48vw;
+  }
+}
+/* ------------------------------------ */
+.open-image {
+  cursor: pointer;
+}
+.text.active {
+  transform: translate(-50%, 100%);
+  opacity: 0;
 }
