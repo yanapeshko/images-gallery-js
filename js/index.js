@@ -97,7 +97,6 @@ document.addEventListener("click", function (e) {
     }
     e.preventDefault();
   }
-
   // Close image
   if (targetElement.closest(".open-image")) {
     const openImage = targetElement.closest(".open-image");
